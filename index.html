@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALGO.TRACE | Data Intelligence</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="app-canvas">
+    <aside class="control-tower">
+        <div class="brand">
+            <h1 class="logo">ALGO<span>.TRACE</span></h1>
+            <div class="engine-tag">Algo Trace</div>
+        </div>
+
+        <div class="analytics-hub">
+            <div class="a-card">
+                <span class="a-label">ITERATION PASSES</span>
+                <span id="stat-pass" class="a-val">0</span>
+            </div>
+            <div class="a-card">
+                <span class="a-label">TOTAL ROUNDS</span>
+                <span id="stat-round" class="a-val">0</span>
+            </div>
+            <div class="a-card-long">
+                <span class="a-label">TIME COMPLEXITY</span>
+                <span id="stat-time" class="a-val-neon">--</span>
+            </div>
+        </div>
+
+        <div class="algo-selector">
+            <p class="section-title">Select Algorithm</p>
+            <button class="nav-btn active" onclick="setAlgo('bubble', this)">Bubble Sort</button>
+            <button class="nav-btn" onclick="setAlgo('quick', this)">Quick Sort</button>
+            <button class="nav-btn" onclick="setAlgo('merge', this)">Merge Sort</button>
+        </div>
+
+        <div class="logic-vault">
+            <div class="vault-header">
+                <span class="section-title">Algorithm Blueprint</span>
+            </div>
+            <div id="vault-panel" class="vault-content">
+                <ul id="logic-list"></ul>
+            </div>
+        </div>
+
+        <div class="pointer-legend">
+            <p class="section-title">Pointer Intelligence</p>
+            <div class="p-info"><strong>PTR_A:</strong> Current Target element</div>
+            <div class="p-info"><strong>PTR_B:</strong> Comparison Partner</div>
+            <div class="p-info"><strong>PIVOT:</strong> Anchoring reference</div>
+        </div>
+    </aside>
+
+    <main class="workspace">
+        <div class="header-bar">
+            <div class="btn-group">
+                <button class="p-btn p-reset" onclick="initArray()">New Dataset</button>
+                <button class="p-btn p-start" onclick="startExecution()">Execute Logic</button>
+            </div>
+            <div class="narrator-box">
+                <div class="narrator-content">
+                    <span id="narrator-title">NARRATOR ACTIVE</span>
+                    <span id="narrator-txt">Awaiting execution command...</span>
+                </div>
+            </div>
+        </div>
+
+        <section class="stage-area">
+            <div id="bar-plot"></div>
+            <div id="box-grid"></div>
+        </section>
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
